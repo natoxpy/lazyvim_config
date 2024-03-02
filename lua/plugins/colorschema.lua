@@ -17,15 +17,26 @@ return {
                 -- ...
             })
 
-            vim.cmd("colorscheme github_dark_dimmed")
+            -- vim.cmd("colorscheme github_dark_dimmed")
         end,
     },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            require("catppuccin").setup({
+                flavour = "macchiato",
+            })
 
+            vim.cmd("colorscheme catppuccin")
+        end,
+    },
     -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "github_dark_dimmed",
+            colorscheme = "catppuccin",
         },
     },
 }
